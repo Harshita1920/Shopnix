@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Step 1: Select a Theme -->
+    <div class="step active" id="step-1">
+        <h2>Select a Theme</h2>
+        <div class="theme-selection">
+            <div class="theme-card" onclick="selectTheme(this)">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZyl3Q41vwXAVR1CWz-v0AP176WGU0XzurzFcy6mUrSXtroRIiRv-x0oQSMf7j6nr1jdw&usqp=CAU" alt="Bags Theme">
+                <h3>Bags Theme</h3>
+            </div>
+            <div class="theme-card" onclick="selectTheme(this)">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZyl3Q41vwXAVR1CWz-v0AP176WGU0XzurzFcy6mUrSXtroRIiRv-x0oQSMf7j6nr1jdw&usqp=CAU" alt="Flex Theme">
+                <h3>Flex Theme</h3>
+            </div>
+            <div class="theme-card" onclick="selectTheme(this)">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZyl3Q41vwXAVR1CWz-v0AP176WGU0XzurzFcy6mUrSXtroRIiRv-x0oQSMf7j6nr1jdw&usqp=CAU" alt="Chic Theme">
+                <h3>Chic Theme</h3>
+            </div>
+        </div>
+        <button onclick="nextStep(2)">Next →</button>
+    </div>
+
+    <!-- Step 2: Define Your Product -->
+    <div class="step" id="step-2">
+        <h2>Define Your Product</h2>
+        <input type="text" placeholder="Product Type (e.g., Books)">
+        <input type="text" placeholder="Category (optional)">
+        <input type="text" placeholder="Sub-category (optional)">
+        <br><br>
+        <button onclick="prevStep(1)">← Back</button>
+        <button onclick="nextStep(3)">Next →</button>
+    </div>
+
+    <!-- Step 3: Product Details -->
+    <div class="step" id="step-3">
+        <h2>Product Details</h2>
+        <label>Product Name:</label>
+        <input type="text" placeholder="e.g., Anatomy Book">
+        <label>Product Description:</label>
+        <textarea placeholder="Enter product details"></textarea>
+        <br>
+        <input type="file"> Add Image(s)
+        <br>
+        <input type="checkbox"> This product has an SKU code
+        <input type="text" placeholder="e.g., PROD0001">
+        
+        <!-- Pricing Details -->
+        <h3>Pricing Details</h3>
+        <div class="pricing-details">
+            <input type="checkbox"> Price inclusive of GST
+            <br>
+            <input type="text" placeholder="Net price">
+            <input type="text" placeholder="List price">
+            <input type="text" placeholder="Discount %">
+            <input type="text" placeholder="GST rate">
+            <input type="text" placeholder="Shipping charges">
+            <input type="text" placeholder="Stock level">
+        </div>
+
+        <br><br>
+        <button onclick="prevStep(2)">← Back</button>
+        <button onclick="finishSetup()">Finish ✅</button>
+    </div>
+
+    <!-- Final Step: Show Message & Start Over -->
+    <div class="step" id="step-4">
+        <h2>🎉 Setup Complete!</h2>
+        <p>Your product setup is done successfully.</p>
+        <button onclick="restart()">Start Over 🔄</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
